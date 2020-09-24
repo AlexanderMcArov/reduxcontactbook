@@ -1,0 +1,27 @@
+.App {
+  /* display: flex;
+  justify-content: center; */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+header{
+  height: 50px;
+  background: black;
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+header span{
+  color: green;
+  font-size: 30px;
+}
+.hr{
+  height: 2px;
+  background: black;
+  margin: 10px 0px;
+}

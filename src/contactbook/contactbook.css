@@ -1,0 +1,106 @@
+.col{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.contact__input{
+    display: flex;
+    justify-content: center;
+    color: rgb(50, 250, 50);
+    font-weight: 600;
+}
+.input_list{
+    width: 400px;
+    padding: 20px;
+}
+input{
+    border: 0;
+    outline: none;
+    border-bottom: black 2px solid;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 5px;
+    background: rgba(0, 0, 0, .0);
+    color: white;
+}
+.inp_btn{
+    width: min-content;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+    border: black 2px solid;
+    color: white;
+    background: rgb(50, 150, 50);
+    outline: none;
+}
+.inp_btn:hover{
+    border: red 2px outset;
+}
+.contact_list{
+    display: flex;
+    justify-content: center;
+}
+
+.contact_item{
+    width: 400px;
+    height: min-content;
+    border: black 2px solid;    
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0px;
+}
+.item_list{
+    text-align: center;
+    color: silver;
+    font-size: 15px;
+    font-weight: 600;
+}
+.item_list span{
+    font-size: 20px;
+    color: white;
+}
+.btn_item{
+    width: min-content;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    border: black 2px solid;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 5px 5px;
+    outline: none;
+}
+.btn_item:hover{
+    border: red 2px outset;
+}
+.edit{
+    background: rgb(150, 150, 50);
+}
+.delete{
+    background: rgb(150, 50, 50);
+}
+.ok{
+    background: rgb(50, 150, 50);
+}
+.update{
+    background: rgb(50, 50, 150);
+}
+.bt{
+    border-top: black 2px solid;
+    margin: 10px;
+    padding-top: 10px;
+}
+.bb{
+    border-bottom: black 2px solid;
+    margin: 10px;
+    padding-bottom: 10px;
+}
+.mx-5{
+    margin: 0px 10px;
+}
