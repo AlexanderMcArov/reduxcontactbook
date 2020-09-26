@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
+import {useDispatch} from 'react-redux'
+import {contactDeleteItem, contactEditItem} from '../redux/actions/contactbook'
 
 function ContactItem(props) {
 
+    const dispatch = useDispatch()
+
     let data = props.data
-    let [isEdit, setIsEdit] = useState(false)
+    let [isEdit, setIsEdit] = useState(false) // меняет состояние item'a на "редактирование"
     let [name,setName] = useState(data.name)
     let [sname,setSname] = useState(data.sname)
     let [number,setNumber] = useState(data.number)
@@ -11,36 +15,18 @@ function ContactItem(props) {
 
     function deleteItem(){
         console.log(`DeleteItem with ${data.id} ID.`);
-        fetch('http://localhost:3333/contacts/' + data.id,{
-            method: "DELETE",
-            headers:{'Content-Type':'application/json'}            
-        })
-            .then(res=>{
-                props.upDate()
-            })
-            .catch(err=>{
-                console.log(err);
-            })
+        dispatch(contactDeleteItem(data.id))
     }
     function accessItem(){
         setIsEdit(!isEdit)
         console.log(`EditItem with ${data.id} ID.`);
-        fetch('http://localhost:3333/contacts/' + data.id,{
-            method: "PATCH",
-            headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({
-                name,
-                sname,
-                number,
-                email
-            })          
-        })
-            .then(res=>{                
-                props.upDate()
-            })
-            .catch(err=>{
-                console.log(err);
-            })        
+        dispatch(contactEditItem({
+            id: data.id,
+            name: name,
+            sname: sname,
+            number: number,
+            email: email
+        }))      
     }
 
     return (

@@ -1,27 +1,29 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import ContactItem from './ContactItem'
+import {useSelector,useDispatch} from 'react-redux'
+import {contactUpdateItems} from '../redux/actions/contactbook'
 
-function ContactList(props) {
+function ContactList() {
 
-    let data = props.data
-    let upDate = props.contactItem
-    let toItem = []
-    console.log('Вызов');
+    const dispatch = useDispatch()
+    const data = useSelector(state=>{
+        return state.contactReducer.contacts
+    })  
+    console.log(data);
+    useEffect(()=> {
+        dispatch(contactUpdateItems())
+    },[])
 
-    if(data.length === undefined){
-        console.log('DATA пустой');
-        data = []
-    }else{
-        toItem = data.map((item,index) => {
-            return <ContactItem key={index+'-todoItem'} data={item} upDate={upDate}/>
-        })
-    }
-    
+    console.log('DATA',data);
+
+    let bookList = data.map(item=>{
+        return <ContactItem data={item} key={item.id + '-contact'}/>
+    })
+
     return (
         <div className="contact_list">
             <div className="col">
-                {console.log('Срабатывает.')}
-                {toItem.length > 0 ? toItem : 'Список пустой.'}
+                {bookList}
             </div>
         </div>
     );
