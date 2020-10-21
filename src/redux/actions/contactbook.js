@@ -5,7 +5,7 @@ import {
 
 export function contactAddItem(item){
     return (dispatch) => {
-        Axios.post('http://localhost:3333/contacts',{
+        Axios.post('http://localhost:3334/contacts',{
             name: item.name,
             sname: item.sname,
             number: item.number,
@@ -21,7 +21,7 @@ export function contactAddItem(item){
 }
 export function contactDeleteItem(id){
     return (dispatch) => {
-        Axios.delete('http://localhost:3333/contacts/' + id)
+        Axios.delete('http://localhost:3334/contacts/' + id)
             .then(res=>{    
                 dispatch(contactUpdateItems())
             })
@@ -32,7 +32,7 @@ export function contactDeleteItem(id){
 }
 export function contactEditItem(item){
     return (dispatch) => {
-        Axios.patch('http://localhost:3333/contacts/' + item.id,{
+        Axios.patch('http://localhost:3334/contacts/' + item.id,{
             name: item.name,
             sname: item.sname,
             number: item.number,
@@ -48,7 +48,7 @@ export function contactEditItem(item){
 }
 export function contactUpdateItems(){
     return (dispatch) => {
-        Axios.get('http://localhost:3333/contacts')
+        Axios.get('http://localhost:3334/contacts')
             .then(res=>{
                 console.log(res.data);
                 dispatch(fetchAddItem(res.data))

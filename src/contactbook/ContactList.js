@@ -9,12 +9,11 @@ function ContactList() {
     const data = useSelector(state=>{
         return state.contactReducer.contacts
     })  
-    console.log(data);
+
     useEffect(()=> {
         dispatch(contactUpdateItems())
+        console.log('EFFECT');
     },[])
-
-    console.log('DATA',data);
 
     let bookList = data.map(item=>{
         return <ContactItem data={item} key={item.id + '-contact'}/>
@@ -23,6 +22,7 @@ function ContactList() {
     return (
         <div className="contact_list">
             <div className="col">
+                {console.log('Return')}
                 {bookList}
             </div>
         </div>

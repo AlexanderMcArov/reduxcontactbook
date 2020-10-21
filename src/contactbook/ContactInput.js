@@ -26,11 +26,11 @@ function ContactInput(props) {
                     <label htmlFor="name">Email</label><input value={email} onChange={e=>setEmail(e.target.value)}/>
                     <div className="row">
                         <button className="inp_btn" onClick={()=>dispatch(contactAddItem({
-                            name,
-                            sname,
-                            number,
-                            email
-                        }))}>ADD
+                                        name,
+                                        sname,
+                                        number,
+                                        email
+                                    }))}>ADD
                         </button>
                         <div className="mx-5"></div>
                     </div>
